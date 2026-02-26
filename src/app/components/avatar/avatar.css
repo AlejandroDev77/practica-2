@@ -1,0 +1,143 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+.nombre-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.nombre-section h2 {
+  margin: 0;
+  
+}
+
+.nombre-section input {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 200px;
+  text-align: center;
+}
+
+
+.container .canvas-avatar {
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container .canvas-avatar .cuerpo {
+  border-radius: 50%;
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.container .canvas-avatar .cuerpo .ojos {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 30%;
+}
+
+.container .canvas-avatar .cuerpo .ojos .ojo {
+  width: 20%;
+  height: 20%;
+  background: white;
+  border-radius: 50%;
+  border: 2px solid black;
+}
+
+.container .canvas-avatar .cuerpo .ojos .lentes {
+  position: absolute;
+  top: 35%;
+  width: 90%;
+  height: 15%;
+  border: 3px solid #333;
+  left: 5%;
+  background: rgba(255,255,255,0.2);
+}
+
+.container .canvas-avatar .cuerpo .boca {
+  position: absolute;
+  bottom: 20%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.container .canvas-avatar .cuerpo .boca .feliz {
+  width: 40%;
+  height: 20px;
+  border-bottom: 5px solid black;
+  border-radius: 50%;
+}
+
+.container .canvas-avatar .cuerpo .boca .sorprendido {
+  width: 20px;
+  height: 20px;
+  border: 4px solid black;
+  border-radius: 50%;
+}
+
+.container .canvas-avatar .cuerpo .boca .serio {
+  width: 30%;
+  height: 5px;
+  background: black;
+}
+
+.container .controles {
+  background: #f4f4f4;
+  padding: 20px;
+  border-radius: 12px;
+  display: grid;
+  gap: 15px;
+}
+
+.container .controles label,
+.container .controles p {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.container .controles button {
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.container .controles .giro-controles {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 15px;
+  border-top: 1px solid #ccc;
+}
+
+.container .controles .giro-controles p {
+  margin: 0;
+  text-align: center;
+}
+
+.container .controles .giro-controles .boton-girar {
+  padding: 10px 15px;
+  background: #3498db;
+  color: white;
+  border: none;
+  font-weight: bold;
+  transition: background 0.2s ease;
+}
+
+.container .controles .giro-controles .boton-girar:hover {
+  background: #2980b9;
+}
+
+.container .controles .giro-controles .boton-girar:active {
+  transform: scale(0.95);
+}

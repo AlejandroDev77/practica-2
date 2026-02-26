@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { AvatarComponent } from './components/avatar/avatar';
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -8,5 +9,5 @@ import { AvatarComponent } from './components/avatar/avatar';
   styleUrl: './app.css',
 })
 export class App {
-  title = 'practica-2';
+  title = 'clase Gráfica';
 }

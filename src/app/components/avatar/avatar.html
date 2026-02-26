@@ -1,21 +1,25 @@
 <div class="container">
-  <h2>Avatar</h2>
+  <div class="nombre-section">
+
+    <label >Nombre del Avatar</label>
+
+    <input type ="text" [value]="nombre()" (input)="Nombre($event)" placeholder="Nombre del avatar" class="nombre-input"/>
+
   <div class="canvas-avatar">
     <div
       class="cuerpo"
       [style.background-color]="colorFondo()"
-      [style.width.px]="tamaño()"
-      [style.height.px]="tamaño()"
+      [style.width.px]="tamano()"
+      [style.height.px]="tamano()"
+      [style.transform]="'rotate(' + anguloGiro() + 'deg)'"
     >
       <div class="ojos">
         <div class="ojo"></div>
         <div class="ojo"></div>
-
         @if (tieneLentes()) {
-          <div class="Lentes"></div>
+          <div class="lentes"></div>
         }
       </div>
-
       <div class="boca">
         @switch (tipoExpresion()) {
           @case (1) {
@@ -30,29 +34,37 @@
         }
       </div>
     </div>
+
+ 
   </div>
+  <div>
+    
+    <h2 [style.color]= "colorFondo()">  {{nombre()}}</h2>
+  </div>
+
+  
   <div class="controles">
     <label color>
       <input type="color" [value]="colorFondo()" (input)="cambiarColor($event)" />
     </label>
-    <label tamaño>
-      <input
-        type="range"
-        min="100"
-        max="300"
-        [value]="tamanio()"
-        (input)="cambiarTamanio($event)"
-      />
+
+    <label Tamaño>
+      <input type="range" min="100" max="300" [value]="tamano()" (input)="cambiarTamano($event)" />
     </label>
-
     <button (click)="toggleLentes()">
-      {{ tieneLentes() ? 'Quitar Lentes' : 'Poner Lentes' }} (Boolean)
+      {{ tieneLentes() ? 'Quitar lentes' : 'Poner lentes' }} 
     </button>
-
     <div class="expresiones">
-      <button (click)="setExpresion(1)">Feliz</button>
-      <button (click)="setExpresion(2)">Sorprendido</button>
-      <button (click)="setExpresion(3)">Serio</button>
+      <p>Expresión</p>
+      <button (click)="setExpresion(1)">feliz</button>
+      <button (click)="setExpresion(2)">sorprendido</button>
+      <button (click)="setExpresion(3)">serio</button>
+    </div>
+    <div class="giro-controles">
+      <p>Girar Avatar</p>
+      <button (click)="toggleGiro()" class="boton-girar">
+        {{ estaGirando() ? 'Detener' : 'Girar' }}
+      </button>
     </div>
   </div>
 </div>
